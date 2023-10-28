@@ -78,7 +78,9 @@ public:
         int output_row = _parent->_maxy;
         attron(_attributes);
         //mvwprintw(_parent, output_row,0, getText().c_str());
-        mvwprintw(_parent, output_row,0, getTextStatus().c_str());
+        // mvwprintw(_parent, output_row,0, getTextStatus().c_str());
+        const char* formatString = "My status: %s";
+        mvwprintw(_parent, output_row, 0, formatString, getTextStatus().c_str());
         attroff(_attributes);
     }
     
